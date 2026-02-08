@@ -15,17 +15,17 @@ hand=[]
 # filling the deck list
 for suit in card_suits:
     for value in card_values:
-        deck.append(suit+value)
+        deck.append(suit + value)
 
 # drawing cards
 number_of_cards=int(input("Write the number of cards: "))
 # Protection from drawing too many cards
-while(number_of_cards>52):
+while number_of_cards > 52 or number_of_cards < 0:
     print("Wrong number of cards! Draw between 0 and 52!")
-    number_of_cards=int(input("Write the number of cards: "))
+    number_of_cards = int(input("Write the number of cards: "))
 # filling the player's hand with random cards
 for _ in range(number_of_cards):
-    current_card=random.randint(0,len(deck)-1)
+    current_card = random.randint(0,len(deck) - 1)
     hand.append(deck.pop(current_card))
 
 # Results output
